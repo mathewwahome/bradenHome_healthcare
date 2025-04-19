@@ -1,0 +1,25 @@
+CREATE TABLE IF NOT EXISTS `wordpress`.`wpf0_fluentform_submissions`(
+    `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+    `form_id` int unsigned NULL,
+    `serial_number` int unsigned NULL,
+    `response` longtext NULL,
+    `source_url` varchar(255) NULL,
+    `user_id` int unsigned NULL,
+    `status` varchar(45) NULL DEFAULT 'unread' COMMENT 'possible values: read, unread, trashed',
+    `is_favourite` tinyint(1) NOT NULL DEFAULT '0',
+    `browser` varchar(45) NULL,
+    `device` varchar(45) NULL,
+    `ip` varchar(45) NULL,
+    `city` varchar(45) NULL,
+    `country` varchar(45) NULL,
+    `payment_status` varchar(45) NULL,
+    `payment_method` varchar(45) NULL,
+    `payment_type` varchar(45) NULL,
+    `currency` varchar(45) NULL,
+    `payment_total` float NULL,
+    `total_paid` float NULL,
+    `created_at` timestamp NULL,
+    `updated_at` timestamp NULL,
+    PRIMARY KEY  (`id` )
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci ;
+INSERT INTO `wordpress`.`wpf0_fluentform_submissions` VALUES (1, 1, 1, '{"__fluent_form_embded_post_id":"1038","_fluentform_1_fluentformnonce":"52df69d643","_wp_http_referer":"\\/index.php\\/contact\\/","names":{"first_name":"Test One"},"input_text":"0794316045","dropdown":"Dr. Daniel","datetime":"19.04.2024 12:00 PM","message":"Test Message"}', 'https://bradenhome.ynetsolution.com/index.php/contact/', 1, 'read', 0, 'Chrome', 'Linux', '102.214.74.4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2024-3-30 0:36:52.', '2024-3-30 0:37:14.');

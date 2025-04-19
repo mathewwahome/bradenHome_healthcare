@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS `wordpress`.`wpgm_learnpress_user_items`(
+    `user_item_id` bigint unsigned NOT NULL AUTO_INCREMENT,
+    `user_id` bigint unsigned NOT NULL DEFAULT '0',
+    `item_id` bigint unsigned NOT NULL DEFAULT '0',
+    `start_time` datetime NULL,
+    `end_time` datetime NULL,
+    `item_type` varchar(45) NOT NULL DEFAULT '',
+    `status` varchar(45) NOT NULL DEFAULT '',
+    `graduation` varchar(20) NULL,
+    `access_level` int NOT NULL DEFAULT '50',
+    `ref_id` bigint unsigned NOT NULL DEFAULT '0',
+    `ref_type` varchar(45) NULL DEFAULT '',
+    `parent_id` bigint unsigned NOT NULL DEFAULT '0',
+    PRIMARY KEY  (`user_item_id` ),
+    KEY `parent_id` (`parent_id` ),
+    KEY `user_id` (`user_id` ),
+    KEY `item_id` (`item_id` ),
+    KEY `item_type` (`item_type` ),
+    KEY `ref_id` (`ref_id` ),
+    KEY `ref_type` (`ref_type` ),
+    KEY `status` (`status` )
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci ;

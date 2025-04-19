@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS `wordpress`.`wp_wc_order_operational_data`(
+    `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+    `order_id` bigint unsigned NULL,
+    `created_via` varchar(100) NULL,
+    `woocommerce_version` varchar(20) NULL,
+    `prices_include_tax` tinyint(1) NULL,
+    `coupon_usages_are_counted` tinyint(1) NULL,
+    `download_permission_granted` tinyint(1) NULL,
+    `cart_hash` varchar(100) NULL,
+    `new_order_email_sent` tinyint(1) NULL,
+    `order_key` varchar(100) NULL,
+    `order_stock_reduced` tinyint(1) NULL,
+    `date_paid_gmt` datetime NULL,
+    `date_completed_gmt` datetime NULL,
+    `shipping_tax_amount` decimal(26,8) NULL,
+    `shipping_total_amount` decimal(26,8) NULL,
+    `discount_tax_amount` decimal(26,8) NULL,
+    `discount_total_amount` decimal(26,8) NULL,
+    `recorded_sales` tinyint(1) NULL,
+    PRIMARY KEY  (`id` ),
+    UNIQUE KEY `order_id` (`order_id` ),
+    KEY `order_key` (`order_key` )
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci ;

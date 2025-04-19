@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS `wordpress`.`wp_wc_order_addresses`(
+    `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+    `order_id` bigint unsigned NOT NULL,
+    `address_type` varchar(20) NULL,
+    `first_name` text NULL,
+    `last_name` text NULL,
+    `company` text NULL,
+    `address_1` text NULL,
+    `address_2` text NULL,
+    `city` text NULL,
+    `state` text NULL,
+    `postcode` text NULL,
+    `country` text NULL,
+    `email` varchar(320) NULL,
+    `phone` varchar(100) NULL,
+    PRIMARY KEY  (`id` ),
+    UNIQUE KEY `address_type_order_id` (`address_type` ,`order_id` ),
+    KEY `order_id` (`order_id` ),
+    KEY `email` (`email`(254) ),
+    KEY `phone` (`phone` )
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci ;
